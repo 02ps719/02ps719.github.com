@@ -1,0 +1,22 @@
+---
+layout: default
+title: Talks
+permalink: /talks
+comments: false
+author_footer: false
+---
+
+<div>
+
+  	{% assign index = true %}
+
+    {% for post in site.posts %}
+		{% if post.content contains '<!-- talks -->' %}
+		{% assign page = post %}		
+		{% include talk.html %}
+		{% endif %}
+    {% endfor %}
+
+  <p class="rss-subscribe">Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a> or browse <a href="https://github.com/{{site.github_repo}}" target="_blank">source on GitHub</a>.</p>
+
+</div>
